@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Api\v1;
 
 use App\Http\Controllers\Controller;
-use App\Http\Resources\UserDefaultDataResource;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -60,15 +59,6 @@ class AuthController extends Controller
             'status' => true,
             'message' => 'User created successfully',
             'data' => (object) []
-        ]);
-    }
-
-    public function me()
-    {
-        return response()->json([
-            'status' => true,
-            'message' => 'User data',
-            'data' => new UserDefaultDataResource(auth()->user())
         ]);
     }
 }
