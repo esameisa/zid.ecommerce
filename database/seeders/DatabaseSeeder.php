@@ -19,7 +19,8 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             StoreAttributeSeeder::class,
             StoreSeeder::class,
-            MerchantStoreValueSeeder::class
+            MerchantStoreValueSeeder::class,
+            ProductSeeder::class,
         ]);
     }
 }
