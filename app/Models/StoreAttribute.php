@@ -13,5 +13,16 @@ class StoreAttribute extends Model
     protected $fillable = [
         'name',
         'type',
+        'is_required',
     ];
+
+    public function values()
+    {
+        return $this->hasMany(MerchantStoreValue::class, 'store_attribute_id', 'id');
+    }
+
+    public function scopeRequired($query, $value = true)
+    {
+        return $query->where('is_required', $value);
+    }
 }

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\v1\AuthController;
+use App\Http\Controllers\Api\v1\MerchantStoreController;
 use App\Http\Controllers\Api\v1\StoreController;
 use App\Http\Controllers\Api\v1\UserController;
 use Illuminate\Http\Request;
@@ -26,5 +27,6 @@ Route::group(['prefix' => 'v1'], function () {
 
     Route::group(['middleware' => 'auth:sanctum'], function () {
         Route::get('me', [UserController::class, 'me']);
+        Route::resource('stores', MerchantStoreController::class);
     });
 });

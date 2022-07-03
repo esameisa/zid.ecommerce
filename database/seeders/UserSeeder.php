@@ -25,5 +25,7 @@ class UserSeeder extends Seeder
             'email' => 'consumer@zid.sa',
             'type' => 'consumer',
         ]);
+
+        \App\Models\User::factory(5)->create();
     }
 }

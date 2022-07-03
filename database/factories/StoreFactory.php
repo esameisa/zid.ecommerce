@@ -5,9 +5,9 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\StoreAttribute>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Store>
  */
-class StoreAttributeFactory extends Factory
+class StoreFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -17,9 +17,10 @@ class StoreAttributeFactory extends Factory
     public function definition()
     {
         return [
+            'merchant_id' => $this->faker->randomElement(
+                \App\Models\User::where('type', 'merchant')->pluck('id')->toArray()
+            ),
             'name' => $this->faker->word,
-            'type' => $this->faker->randomElement(['string', 'integer', 'boolean']),
-            'is_required' => $this->faker->randomElement([true, false]),
         ];
     }
 }
