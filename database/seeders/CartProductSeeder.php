@@ -2,10 +2,11 @@
 
 namespace Database\Seeders;
 
+use App\Models\CartProduct;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class StoreSeeder extends Seeder
+class CartProductSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,8 +15,6 @@ class StoreSeeder extends Seeder
      */
     public function run()
     {
-        \App\Models\Store::factory(5)->create([
-            'merchant_id' => 1,
-        ]);
+        CartProduct::factory(15)->create();
     }
 }

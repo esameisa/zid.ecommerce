@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\v1\AuthController;
+use App\Http\Controllers\Api\v1\CartController;
 use App\Http\Controllers\Api\v1\MerchantStoreController;
 use App\Http\Controllers\Api\v1\ProductController;
 use App\Http\Controllers\Api\v1\StoreController;
@@ -32,5 +33,6 @@ Route::group(['prefix' => 'v1'], function () {
             'stores' => MerchantStoreController::class,
         ]);
         Route::post('products', [ProductController::class, 'store']);
+        Route::post('cart', [CartController::class, 'store']);
     });
 });
