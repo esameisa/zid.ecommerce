@@ -29,7 +29,11 @@ class StoreProductRequest extends FormRequest
             'name' => 'required|string|max:255',
             'vat_type' => 'required|string|in:included,calculated',
             'vat_percentage' => 'required_if:vat_type,calculated|numeric|min:0|max:100',
-            'shipping_cost' => 'numeric|min:0'
+            'shipping_cost' => 'numeric|min:0',
+            'price' => 'required|array',
+            'price.amount' => 'required|numeric|min:0',
+            'price.currency' => 'required|string|in:EGP,AED,USD,SAR,EUR',
+            'description' => 'string|max:255',
         ];
     }
 }

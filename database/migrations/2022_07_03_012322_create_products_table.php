@@ -16,10 +16,12 @@ return new class extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('store_id');
-            $table->string('name');
+            $table->text('name');
             $table->string('vat_type'); // included in the products price or should be calculated from the products price.
             $table->float('vat_percentage'); // if vat_type is included in the price, this is the percentage of vat.
             $table->float('shipping_cost')->nullable();
+            $table->text('price');
+            $table->longText('description')->nullable();
             $table->timestamps();
         });
 

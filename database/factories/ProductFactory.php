@@ -23,6 +23,11 @@ class ProductFactory extends Factory
             'vat_type' => $this->faker->randomElement(['included', 'calculated']),
             'vat_percentage' => $this->faker->numberBetween(0, 100),
             'shipping_cost' => $this->faker->numberBetween(10, 200),
+            'price' => [
+                'amount' => $this->faker->randomFloat(2, 0, 100),
+                'currency' => $this->faker->randomElement(['EGP', 'AED', 'USD', 'SAR', $this->faker->currencyCode])
+            ],
+            'description' => $this->faker->text(),
         ];
     }
 }
